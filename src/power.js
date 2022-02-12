@@ -1,5 +1,5 @@
-// Given two integers -- a base and an exponent -- write a 
-// recursive function that computes the exponent math and 
+// Given two integers -- a base and an exponent -- write a
+// recursive function that computes the exponent math and
 // returns the result.
 
 // Exponent math is performed by multiplying the base by itself
@@ -14,4 +14,15 @@
 
 var power = function(base, exponent) {
   // Your code here
+  var result = 1;
+
+  if (exponent <= 0) {
+    return result;
+  } else {
+    result *= base;
+  }
+
+  result *= power (base, exponent - 1);
+
+  return result;
 };
